@@ -14,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.armelift.app.DummyModel;
 import com.armelift.app.model.CommentModel;
 
 
@@ -31,11 +32,7 @@ public class CommentServiceImplTest{
 	@Before
 	public void setup(){
 		systemUnderTest = new CommentServiceImpl(repository);
-		model = new CommentModel();
-		
-		model.setId(UUID.randomUUID().toString());
-		model.setPageId("dslkfsdlkf");
-		
+		model = DummyModel.get();
 		repository.deleteAll();
 	}
 	

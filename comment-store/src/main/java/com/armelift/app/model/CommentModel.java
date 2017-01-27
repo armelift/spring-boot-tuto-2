@@ -46,6 +46,9 @@ public class CommentModel implements Serializable {
 	@Column(length = 32)
 	private String pageId;
 	
+	@Column(length = 128)
+	private String userName;
+	
 	@Temporal(TemporalType.TIMESTAMP) 
 	@Type(type = "calendarUTC")
 	private Calendar creationDate;
@@ -78,6 +81,15 @@ public class CommentModel implements Serializable {
 		this.pageId = pageId;
 	}
 
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	
 	public Calendar getCreationDate() {
 		return creationDate;
 	}
